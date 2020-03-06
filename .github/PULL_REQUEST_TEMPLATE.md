@@ -1,30 +1,31 @@
-(Thanks for sending a pull request! Please make sure you click the link above to view the contribution guidelines, then fill out the blanks below.)
+<!--- Provide a general summary of your changes in the Title above -->
 
-What does this implement/fix? Explain your changes.
----------------------------------------------------
-…
+## Description
+<!--- Describe your changes in detail -->
 
-Does this close any currently open issues?
-------------------------------------------
-…
+## Motivation and context
+<!--- Why is this change required? What problem does it solve? -->
+<!--- If it fixes an open issue, please link to the issue here. -->
 
+## How has this been tested?
+<!--- Please describe in detail how you tested your changes. -->
+<!--- Include details of your testing environment, and the tests you ran to -->
+<!--- see how your change affects other areas of the code, etc. -->
 
-Any relevant logs, error output, etc?
--------------------------------------
-(If it’s long, please paste to https://ghostbin.com/ and insert the link here.)
+## Screenshots (if appropriate):
 
-Any other comments?
--------------------
-…
+## Types of changes
+<!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to change)
 
-Where has this been tested?
----------------------------
-**Operating System:** …
-
-**Platform:** …
-
-**Target Platform:** …
-
-**Toolchain Version:** …
-
-**SDK Version:** …
+## Checklist:
+<!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
+<!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+- [ ] My code follows the code style of this project.
+- [ ] My change requires a change to the documentation.
+- [ ] I have updated the documentation accordingly.
+- [ ] I have read the **CONTRIBUTING** document.
+- [ ] I have added tests to cover my changes.
+- [ ] All new and existing tests passed.

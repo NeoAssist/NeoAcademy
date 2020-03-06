@@ -1,32 +1,32 @@
-(Thanks for reporting an issue! Please make sure you click the link above to view the issue guidelines, then fill out the blanks below.)
+<!--- Provide a general summary of the issue in the Title above -->
 
-What are the steps to reproduce this issue?
--------------------------------------------
-1. …
-2. …
-3. …
+## Expected Behavior
+<!--- If you're describing a bug, tell us what should happen -->
+<!--- If you're suggesting a change/improvement, tell us how it should work -->
 
-What happens?
--------------
-…
+## Current Behavior
+<!--- If describing a bug, tell us what happens instead of the expected behavior -->
+<!--- If suggesting a change/improvement, explain the difference from current behavior -->
 
-What were you expecting to happen?
-----------------------------------
-…
+## Possible Solution
+<!--- Not obligatory, but suggest a fix/reason for the bug, -->
+<!--- or ideas how to implement the addition or change -->
 
-Any logs, error output, etc?
-----------------------------
-(If it’s long, please paste to https://ghostbin.com/ and insert the link here.)
+## Steps to Reproduce (for bugs)
+<!--- Provide a link to a live example, or an unambiguous set of steps to -->
+<!--- reproduce this bug. Include code to reproduce, if relevant -->
+1.
+2.
+3.
+4.
 
+## Context
+<!--- How has this issue affected you? What are you trying to accomplish? -->
+<!--- Providing context helps us come up with a solution that is most useful in the real world -->
 
-Any other comments?
--------------------
-…
-
-What versions of software are you using?
-----------------------------------------
-**Operating System:** …
-
-**Toolchain Version:** …
-
-**SDK Version:** …
+## Your Environment
+<!--- Include as many relevant details about the environment you experienced the bug in -->
+* Version used:
+* Environment name and version (e.g. Chrome 39, node.js 5.4):
+* Operating System and version (desktop or mobile):
+* Link to your project:
