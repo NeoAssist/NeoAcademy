@@ -1,3 +1,12 @@
+---
+name: Bug report
+about: Create a report to help us improve
+title: ''
+labels: 'type:bug :bug:'
+assignees: ''
+
+---
+
 <!--- Provide a general summary of the issue in the Title above -->
 
 ## Expected Behavior
