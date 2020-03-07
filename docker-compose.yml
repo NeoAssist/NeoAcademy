@@ -9,16 +9,15 @@ networks:
 
 services:
   server:
+    restart: always
     build:
-      context: server/build
-      dockerfile: Dockerfile
+      context: server
+      dockerfile: build/Dockerfile
     command: |
-      sh -c "cd cmd/server && ls"
-
+      sh -c "go build && /go/bin/server"
     networks:
       - backend
-
     ports:
       - '8080:8080'
     volumes:
-      - ../server:/go/src/server/
+      - ./server/:/go/src/server
