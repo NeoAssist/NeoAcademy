@@ -17,7 +17,22 @@ services:
       sh -c "go build && /go/bin/server"
     networks:
       - backend
+      - frontend
     ports:
       - '8080:8080'
     volumes:
       - ./server/:/go/src/server
+
+  client:
+    restart: always
+    build:
+      context: client
+      dockerfile: build/Dockerfile
+    command: |
+      sh -c "npm run dev"
+    networks:
+      - frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client/:/usr/src/client
