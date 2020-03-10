@@ -7,5 +7,3 @@ RUN apk update && apk upgrade
 RUN apk add git
 
 COPY . /usr/src/client/
-
-RUN npm install
