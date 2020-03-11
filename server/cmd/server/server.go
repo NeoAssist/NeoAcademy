@@ -1,19 +1,18 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
-
-	"github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
+	"github.com/NeoAssist/NeoAcademy/internal/pkg/database/models"
 )
 
-func homeLink(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome home!")
-}
-
 func main() {
-	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/", homeLink)
-	log.Fatal(http.ListenAndServe(":8080", router))
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "ping pong",
+		})
+	})
+
+	models.SayHi()
+	_ = r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
