@@ -14,8 +14,7 @@ services:
       context: server
       dockerfile: build/Dockerfile
     command: |
-      sh -c "go install -v ./..." |
-      sh -c "go build && /go/bin/neoacademy"
+      sh -c "go install -v ./... && go build && /go/bin/neoacademy"
     networks:
       - backend
       - frontend
