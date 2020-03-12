@@ -1,7 +1,7 @@
 package main
 
 import (
-	"server/cmd/server"
+	"github.com/NeoAssist/NeoAcademy/internal/pkg/server"
 )
 
 func main() {

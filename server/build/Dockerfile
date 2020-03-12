@@ -4,6 +4,5 @@ COPY . /go/src/server/
 
 WORKDIR /go/src/server/cmd/neoacademy
 
-RUN apk add --no-cache git
-
-RUN go get -d -v ./...
+RUN apk add --no-cache git && \
+    go mod vendor
