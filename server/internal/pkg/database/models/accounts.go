@@ -15,5 +15,5 @@ type Account struct {
 }
 
 func SayHi() {
-	fmt.Println("Hi Fucker")
+	fmt.Println("Hello World")
 }
