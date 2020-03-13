@@ -13,8 +13,7 @@ services:
     build:
       context: server
       dockerfile: build/Dockerfile
-    command: |
-      sh -c "go build && /go/bin/server"
+    command: go run neoacademy.go
     networks:
       - backend
       - frontend
