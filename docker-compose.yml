@@ -18,8 +18,13 @@ services:
     restart: always
     build:
       context: server
+<<<<<<< HEAD
       dockerfile: build/package/Dockerfile
     command: go run cmd/server/server.go
+=======
+      dockerfile: build/Dockerfile
+    command: go run neoacademy.go
+>>>>>>> 02119ffd4b99f6c160da6f6b2b11d703dea7db0a
     networks:
       - server
     ports:
