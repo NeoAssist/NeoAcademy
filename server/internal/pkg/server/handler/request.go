@@ -1,11 +1,61 @@
 package handler
 
-// package handler
+import (
+	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/model"
+	"github.com/labstack/echo/v4"
+)
 
-// import (
-// 	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/model"
-// 	"github.com/labstack/echo/v4"
-// )
+type accountCreateRequest struct {
+	Account struct {
+		Email    string `json:"email"`
+		Password string `json:"password"`
+		Name     string `json:"name"`
+		Active   bool   `json:"active"`
+	} `json:"account"`
+}
+
+type accountUpdateRequest struct {
+	Account struct {
+		Email    string `json:"email"`
+		Password string `json:"password"`
+		Name     string `json:"name"`
+		Active   bool   `json:"active"`
+	} `json:"account"`
+}
+
+func (r *accountCreateRequest) bind(context echo.Context, account *model.Account) error {
+
+	if err := context.Bind(r); err != nil {
+		return err
+	}
+	if err := context.Validate(r); err != nil {
+		return err
+	}
+
+	account.Email = r.Account.Email
+	account.Password = r.Account.Password
+	account.Name = r.Account.Name
+	account.Active = r.Account.Active
+
+	return nil
+}
+
+func (r *accountUpdateRequest) bind(context echo.Context, account *model.Account) error {
+
+	if err := context.Bind(r); err != nil {
+		return err
+	}
+	if err := context.Validate(r); err != nil {
+		return err
+	}
+
+	account.Email = r.Account.Email
+	account.Password = r.Account.Password
+	account.Name = r.Account.Name
+	account.Active = r.Account.Active
+
+	return nil
+}
 
 // type accountUpdateRequest struct {
 // 	Account struct {

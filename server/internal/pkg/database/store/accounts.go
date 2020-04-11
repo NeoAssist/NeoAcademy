@@ -3,6 +3,7 @@ package store
 import (
 	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/model"
 	"github.com/jinzhu/gorm"
+	uuid "github.com/satori/go.uuid"
 )
 
 // AccountStore .
@@ -18,9 +19,9 @@ func NewAccountStore(db *gorm.DB) *AccountStore {
 }
 
 // GetByID .
-func (as *AccountStore) GetByID(id uint) (*model.Account, error) {
+func (as *AccountStore) GetByID(id uuid.UUID) (*model.Account, error) {
 	var m model.Account
-	if err := as.db.First(&m, id).Error; err != nil {
+	if err := as.db.Where(&model.Account{ID: id}).Error; err != nil {
 		if gorm.IsRecordNotFoundError(err) {
 			return nil, nil
 		}
@@ -60,5 +61,11 @@ func (as *AccountStore) Create(u *model.Account) (err error) {
 
 // Update .
 func (as *AccountStore) Update(u *model.Account) error {
-	return as.db.Model(u).Update(u).Error
+	transaction := as.db.Begin()
+
+	if err := transaction.Model(u).Update(u).Error; err != nil {
+		return err
+	}
+
+	return transaction.Commit().Error
 }

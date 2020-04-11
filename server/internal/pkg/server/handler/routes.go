@@ -1,7 +1,6 @@
 package handler
 
 import (
-	middleware "github.com/NeoAssist/NeoAcademy/internal/pkg/server/router/middleware"
 	"github.com/labstack/echo/v4"
 )
 
@@ -18,12 +17,15 @@ func (h *Handler) Register(v1 *echo.Group) {
 	// user.GET("", h.CurrentUser)
 	// user.PUT("", h.UpdateUser)
 
-	accounts := v1.Group("/accounts", middleware.JWTWithConfig(
-		middleware.JWTConfig{
-			SigningKey: middleware.JWTSecret,
-		},
-	))
+	// Example of group accounts with JWT
+	// accounts := v1.Group("/accounts", middleware.JWTWithConfig(
+	// 	middleware.JWTConfig{
+	// 		SigningKey: middleware.JWTSecret,
+	// 	},
+	// ))
+
+	accounts := v1.Group("/accounts")
 
 	accounts.POST("", h.CreateAccount)
-	accounts.PUT("", h.UpdateAccount)
+	accounts.PUT("/:id", h.UpdateAccount)
 }
