@@ -20,21 +20,26 @@ const Head = (props) => (
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/static/favicon-16x16.png"
+            href="/public/favicon-16x16.png"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/static/favicon-32x32.png"
+            href="/public/favicon-32x32.png"
         />
-        <link rel="shortcut icon" href="/static/favicon.ico" />
+        <link rel="shortcut icon" href="/public/favicon.ico" />
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/static/apple-touch-icon.png"
+            href="/public/apple-touch-icon.png"
         />
-        <link rel="mask-icon" href="/static/favicon-mask.svg" color="#000000" />
+        <link rel="mask-icon" href="/public/favicon-mask.svg" color="#000000" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/styles/global.css" />
         <meta property="og:url" content={props.url || defaultOGURL} />
         <meta property="og:title" content={props.title || ''} />
         <meta

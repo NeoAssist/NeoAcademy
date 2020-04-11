@@ -11,35 +11,33 @@ const Layout = ({ signed, children }) => {
 };
 
 const App = ({ Component, pageProps, router }) => {
-    const signed = false;
+    const signed = true;
     if (process.browser) {
-        do {
-            switch (router.pathname) {
-                case '/':
-                    router.push(signed ? '/dashboard' : '/login');
-                    break;
-                case '/login':
-                    if (signed) {
-                        router.push('/dashboard');
-                    }
-                    break;
-                default:
-                    if (!signed) {
-                        router.push('/login');
-                    }
-                    break;
-            }
-        } while (0);
+        switch (router.pathname) {
+            case '/':
+                router.push(signed ? '/dashboard' : '/login');
+                break;
+            case '/login':
+                if (signed) {
+                    router.push('/dashboard');
+                }
+                break;
+            default:
+                if (!signed) {
+                    router.push('/login');
+                }
+                break;
+        }
     }
 
     return (
-        <>
+        <Layout signed={signed}>
             <Head />
-            <Layout signed={signed}>
+            <>
                 <Component {...pageProps} />
                 <GlobalStyle />
-            </Layout>
-        </>
+            </>
+        </Layout>
     );
 };
 
