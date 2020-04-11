@@ -178,3 +178,4 @@ Don't confuse the project level `/src` directory with the `/src` directory Go us
 
 A more opinionated project template with sample/reusable configs, scripts and code is a WIP.
 
+Template used to create the routes and database: https://github.com/xesina/golang-echo-realworld-example-app
