@@ -1,7 +1,7 @@
 package models
 
 import (
-	_ "github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm" // not blank
 	_ "github.com/satori/go.uuid"
 )
 

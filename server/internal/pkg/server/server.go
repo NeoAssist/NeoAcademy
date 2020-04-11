@@ -1,16 +1,22 @@
 package server
 
 import (
-	"github.com/gin-gonic/gin"
+	"github.com/NeoAssist/NeoAcademy/internal/pkg/database"
+	accounts "github.com/NeoAssist/NeoAcademy/internal/pkg/database/store"
+	handler "github.com/NeoAssist/NeoAcademy/internal/pkg/server/handler"
+	router "github.com/NeoAssist/NeoAcademy/internal/pkg/server/router"
 )
 
+// RunServer Initialize a new server
 func RunServer() {
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "ping pong",
-		})
-	})
+	r := router.InitializeRoutes()
+	v1 := r.Group("/api/v1")
 
-	_ = r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	d := database.New()
+	database.AutoMigrate(d)
+
+	as := accounts.NewAccountStore(d)
+	h := handler.NewHandler(as)
+	h.Register(v1)
+	r.Logger.Fatal(r.Start("127.0.0.1:8585"))
 }
