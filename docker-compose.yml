@@ -46,8 +46,8 @@ services:
     restart: always
     environment:
       DB_NAME: neoacademy
-      POSTGRES_USER: neoacademy
-      POSTGRES_PASSWORD: neoacademy
+      POSTGRES_USER: ${PG_NA_USER:-neoacademy}
+      POSTGRES_PASSWORD: ${PG_NA_PASS:-neoacademy}
     networks:
       database:
         ipv4_address: 10.10.10.2
