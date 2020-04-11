@@ -7,8 +7,8 @@
         "dev": "next",
         "build": "next build",
         "start": "next start",
-        "test": "jest --watch",
-        "test:ci": "jest --ci"
+        "test:watch": "jest --watch",
+        "test": "jest --ci"
     },
     "keywords": [],
     "author": "",
