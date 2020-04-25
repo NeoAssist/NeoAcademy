@@ -23,13 +23,8 @@ jobs:
 
     - name: Get dependencies
       working-directory: ./server
-      run: |
-        go get -v -t -d ./...
-        if [ -f Gopkg.toml ]; then
-            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-            dep ensure
-        fi
+      run: go mod vendor
 
     - name: Build
       working-directory: ./server
-      run: go build -v cmd/server/server.go
+      run: go build -v cmd/neoacademy/neoacademy.go
