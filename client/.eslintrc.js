@@ -26,6 +26,7 @@ module.exports = {
             { extensions: ['.js', '.jsx'] },
         ],
         'import/prefer-default-export': 'off',
+        'jsx-a11y/anchor-is-valid': 'off',
         'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
         'react/jsx-one-expression-per-line': 'off',
         'react/jsx-props-no-spreading': 'off',
@@ -37,10 +38,5 @@ module.exports = {
         'no-console': ['error', { allow: ['tron'] }],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
-        'jsx-a11y/label-has-associated-control': [
-            {
-                controlComponents: ['Input'],
-            },
-        ],
     },
 };

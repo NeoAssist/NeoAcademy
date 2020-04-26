@@ -1,13 +1,6 @@
+import React from 'react';
 import Link from 'next/link';
-
-const links = [
-    { href: '/dashboard', label: 'Dashboard' },
-    { href: '/profile', label: 'Profile' },
-    { href: '/login', label: 'Login' },
-].map((link) => {
-    link.key = `nav-link-${link.href}-${link.label}`;
-    return link;
-});
+import { navLinks } from './constants';
 
 const Nav = () => (
     <nav>
@@ -18,7 +11,7 @@ const Nav = () => (
                 </Link>
             </li>
             <ul>
-                {links.map(({ key, href, label }) => (
+                {navLinks.map(({ key, href, label }) => (
                     <li key={key}>
                         <Link href={href}>
                             <a>{label}</a>

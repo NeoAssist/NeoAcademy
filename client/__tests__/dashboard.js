@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Dashboard from '../pages/dashboard';
 import { toBeInTheDocument } from '@testing-library/jest-dom/matchers';
+import Dashboard from '../pages/dashboard';
 
 expect.extend({ toBeInTheDocument });
 
