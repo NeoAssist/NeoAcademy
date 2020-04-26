@@ -1,6 +1,6 @@
 # note: call scripts from /scripts
-build: 
+build:
 	go build cmd/neoacademy/neoacademy.go
 
-run: 
+run:
 	go run cmd/neoacademy/neoacademy.go

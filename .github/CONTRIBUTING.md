@@ -23,7 +23,7 @@ If you're sure you've followed all instructions and haven't made any of the comm
 
 The more information you have, the better. Post as much as you can related to the issues to help us resolve it in a timely matter. If you have multiple issues, please file them as separate issues. This will help us sort them out efficiently.
 
-Don't ask a question not related to the topic of the current issue, especially if it's on someone else's issue. This is known as [thread hijacking](http://www.urbandictionary.com/define.php?term=Thread+Hijacking). 
+Don't ask a question not related to the topic of the current issue, especially if it's on someone else's issue. This is known as [thread hijacking](http://www.urbandictionary.com/define.php?term=Thread+Hijacking).
 
 Thanks!
 

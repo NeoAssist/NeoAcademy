@@ -6,7 +6,7 @@ name: Node.js Workflow
 on:
   pull_request:
     branches: [ master, develop ]
-    paths: 
+    paths:
       - client/**
 
 jobs:
