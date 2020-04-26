@@ -1,5 +1,5 @@
 import React from 'react';
-import { element } from 'prop-types';
+import { string, element, oneOfType } from 'prop-types';
 import { Container } from './styles';
 import Nav from '../../components/Nav';
 
@@ -11,7 +11,7 @@ const AuthLayout = ({ children }) => (
 );
 
 AuthLayout.propTypes = {
-    children: element.isRequired,
+    children: oneOfType([string, element]).isRequired,
 };
 
 export default AuthLayout;
