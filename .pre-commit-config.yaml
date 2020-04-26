@@ -16,15 +16,10 @@
     - id: go-fmt
       file: server/**/*.go
 
+
 # Nodejs hooks
 - repo: https://github.com/pre-commit/mirrors-eslint
   rev: master
   hooks:
     - id: eslint
       file: client/**/*.js
-
-# - repo: https://github.com/pre-commit/mirrors-csslint
-#   rev: master
-#   hooks:
-#     - id: csslint
-#       file: 'client/**/*.js'

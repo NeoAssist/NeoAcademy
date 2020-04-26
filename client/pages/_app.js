@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { string, bool, element, oneOfType, shape } from 'prop-types';
 import AuthLayout from '../layouts/auth';
 import DefaultLayout from '../layouts/default';
 import Head from '../components/head';
 import GlobalStyle from '../styles/global';
 
 const Layout = ({ signed, children }) => {
-    let Content = signed ? AuthLayout : DefaultLayout;
+    const Content = signed ? AuthLayout : DefaultLayout;
 
     return <Content>{children}</Content>;
 };
@@ -39,6 +40,17 @@ const App = ({ Component, pageProps, router }) => {
             </>
         </Layout>
     );
+};
+
+Layout.propTypes = {
+    signed: bool.isRequired,
+    children: oneOfType([string, element]).isRequired,
+};
+
+App.propTypes = {
+    Component: element.isRequired,
+    pageProps: shape.isRequired,
+    router: shape.isRequired,
 };
 
 export default App;
