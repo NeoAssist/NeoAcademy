@@ -26,15 +26,15 @@ jobs:
 
     - name: Installing dependencies with Node.js ${{ matrix.node-version }}
       working-directory: ./client
-      run: npm ci
+      run: yarn install
 
     - name: Building the project with Node.js ${{ matrix.node-version }}
       working-directory: ./client
-      run: npm build --if-present
+      run: yarn build --if-present
 
     - name: Testing the project with Node.js ${{ matrix.node-version }}
       working-directory: ./client
-      run: npm test
+      run: yarn test
 
       env:
         CI: true
