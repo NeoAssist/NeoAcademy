@@ -14,6 +14,6 @@ WORKDIR /root
 
 COPY --from=builder /root /root
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD ["yarn", "dev"]

@@ -15,6 +15,6 @@ WORKDIR /root
 
 COPY --from=builder /root /root
 
-EXPOSE 80
+EXPOSE 8000
 
 CMD ["go", "run", "cmd/neoacademy/neoacademy.go"]
