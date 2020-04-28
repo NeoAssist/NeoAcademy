@@ -1,9 +1,19 @@
-FROM node:13-alpine
+FROM node:14-alpine as base
 
-RUN mkdir -p /usr/src/client
-WORKDIR /usr/src/client
+FROM base as builder
 
-RUN apk update && apk upgrade
-RUN apk add git
+WORKDIR /root
 
-COPY . /usr/src/client/
+COPY . .
+
+RUN yarn install
+
+FROM base as runner
+
+WORKDIR /root
+
+COPY --from=builder /root /root
+
+EXPOSE 3000
+
+CMD ["yarn", "dev"]

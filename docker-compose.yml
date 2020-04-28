@@ -1,13 +1,7 @@
-version: '3.5'
+version: "3.7"
 
 networks:
-  server:
-    driver: bridge
-
-  client:
-    driver: bridge
-
-  database:
+  neoacademy:
     ipam:
       driver: default
       config:
@@ -19,40 +13,39 @@ services:
     build:
       context: server
       dockerfile: build/package/Dockerfile
-    command: go run cmd/server/server.go
-    networks:
-      - server
-    ports:
-      - '8080:8080'
     volumes:
-      - ./server/:/go/src/server
+      - ./server/:/root
+    networks:
+      neoacademy:
+        ipv4_address: 10.10.10.20
+    depends_on:
+      - postgres
 
   client:
     restart: always
     build:
       context: client
       dockerfile: build/Dockerfile
-    command: |
-      sh -c "npm install && npm run dev"
-    networks:
-      - client
-    ports:
-      - '3000:3000'
     volumes:
-      - ./client/:/usr/src/client
+      - ./client/:/root
+    networks:
+      neoacademy:
+        ipv4_address: 10.10.10.21
+    depends_on:
+      - server
 
   postgres:
     image: postgres
     restart: always
     environment:
-      DB_NAME: neoacademy
+      POSTGRES_DB: neoacademy
       POSTGRES_USER: ${PG_NA_USER:-neoacademy}
       POSTGRES_PASSWORD: ${PG_NA_PASS:-neoacademy}
-      TZ: 'UTC'
-      PGTZ: 'UTC'
+      TZ: "UTC"
+      PGTZ: "UTC"
     networks:
-      database:
-        ipv4_address: 10.10.10.2
+      neoacademy:
+        ipv4_address: 10.10.10.22
 
   pgadmin:
     image: dpage/pgadmin4
@@ -62,5 +55,5 @@ services:
       PGADMIN_DEFAULT_PASSWORD: neoacademy
       PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 10
     networks:
-      database:
-        ipv4_address: 10.10.10.4
+      neoacademy:
+        ipv4_address: 10.10.10.23
