@@ -1,7 +1,7 @@
 package handler
 
 import (
-	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/model"
+	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/models"
 	"github.com/labstack/echo/v4"
 )
 
@@ -71,7 +71,7 @@ func (r *accountUpdateRequest) bind(context echo.Context, account *model.Account
 // 	return new(accountUpdateRequest)
 // }
 
-// func (r *accountUpdateRequest) populate(u *model.Account) {
+// func (r *accountUpdateRequest) populate(u *models.Account) {
 // 	r.Account.Username = u.Username
 // 	r.Account.Email = u.Email
 // 	r.Account.Password = u.Password
@@ -83,7 +83,7 @@ func (r *accountUpdateRequest) bind(context echo.Context, account *model.Account
 // 	}
 // }
 
-// func (r *accountUpdateRequest) bind(c echo.Context, u *model.Account) error {
+// func (r *accountUpdateRequest) bind(c echo.Context, u *models.Account) error {
 // 	if err := c.Bind(r); err != nil {
 // 		return err
 // 	}
@@ -112,7 +112,7 @@ func (r *accountUpdateRequest) bind(context echo.Context, account *model.Account
 // 	} `json:"user"`
 // }
 
-// func (r *accountRegisterRequest) bind(c echo.Context, u *model.Account) error {
+// func (r *accountRegisterRequest) bind(c echo.Context, u *models.Account) error {
 // 	if err := c.Bind(r); err != nil {
 // 		return err
 // 	}

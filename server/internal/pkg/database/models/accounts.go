@@ -8,11 +8,9 @@ import (
 	uuid "github.com/satori/go.uuid"
 )
 
-// Account model
 type Account struct {
 	ID        uuid.UUID `gorm:"type:uuid;primary_key;"`
-	Name      string    `gorm:"size:255"`
-	Email     string    `gorm:"type:varchar(100)"`
+	Email     string    `gorm:"size:100;index:account_email_index"`
 	Password  string    `gorm:"not null"`
 	Active    bool
 	CreatedAt time.Time
@@ -22,8 +20,7 @@ type Account struct {
 
 // BeforeCreate will set a UUID rather than numeric ID.
 func (account *Account) BeforeCreate(scope *gorm.Scope) error {
-	uuid := uuid.NewV4()
-	scope.SetColumn("ID", uuid)
+	scope.SetColumn("ID", uuid.NewV4())
 	scope.SetColumn("Active", true)
 
 	return nil
