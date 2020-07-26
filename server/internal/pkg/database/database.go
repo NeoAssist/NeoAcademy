@@ -3,13 +3,12 @@ package database
 import (
 	"fmt"
 
-	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/model"
+	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/models"
 	environment "github.com/NeoAssist/NeoAcademy/internal/utils"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres" // indirect
 )
 
-// New .
 func New() *gorm.DB {
 	dbHost := environment.GetEnv("DATABASE_HOST")
 	dbPort := environment.GetEnv("DATABASE_PORT")
@@ -29,9 +28,10 @@ func New() *gorm.DB {
 	return db
 }
 
-// AutoMigrate .
 func AutoMigrate(db *gorm.DB) {
 	db.AutoMigrate(
 		&model.Account{},
+		&model.User{},
+		&model.Attachment{},
 	)
 }

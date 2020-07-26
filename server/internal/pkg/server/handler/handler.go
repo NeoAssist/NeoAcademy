@@ -1,17 +1,19 @@
 package handler
 
-import (
-	accounts "github.com/NeoAssist/NeoAcademy/internal/pkg/database/interface"
-)
+import "github.com/NeoAssist/NeoAcademy/internal/pkg/database/interfaces"
 
 // Handler .
 type Handler struct {
-	accountStore accounts.Store
+	accountInterface    interfaces.AccountsInterface
+	userInterface       interfaces.UsersInterface
+	attachmentInterface interfaces.AttachmentsInterface
 }
 
 // NewHandler Handle the requests
-func NewHandler(as accounts.Store) *Handler {
+func NewHandler(accountInterface interfaces.AccountsInterface, userInterface interfaces.UsersInterface, attachmentInterface interfaces.AttachmentsInterface) *Handler {
 	return &Handler{
-		accountStore: as,
+		accountInterface:    accountInterface,
+		userInterface:       userInterface,
+		attachmentInterface: attachmentInterface,
 	}
 }

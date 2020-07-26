@@ -1,7 +1,7 @@
 package handler
 
 import (
-	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/model"
+	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/models"
 )
 
 type accountResponse struct {

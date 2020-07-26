@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/model"
+	model "github.com/NeoAssist/NeoAcademy/internal/pkg/database/models"
 	errors "github.com/NeoAssist/NeoAcademy/internal/pkg/errors"
 	"github.com/labstack/echo/v4"
 	uuid "github.com/satori/go.uuid"
